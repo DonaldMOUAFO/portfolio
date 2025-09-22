@@ -1,0 +1,20 @@
+name: Donald MOUAFO
+title: PhD | Data scientist | Machine Learning Engineer | MLOps Engineer | Cloud Enthusiast | RD
+bio: Passionate about AI, MLOps, and building intelligent solutions on the cloud.
+skills:
+  - Python
+  - TensorFlow
+  - PyTorch
+  - AWS SageMaker
+  - MLOps
+  - Data Engineering
+projects:
+  - name: Predictive Maintenance
+    desc: Built an end-to-end ML pipeline on AWS SageMaker.
+  - name: Churn Prediction
+    desc: Deployed a churn prediction model with real-time monitoring.
+  - name: Portfolio Website
+    desc: Flask-based personal portfolio hosted on AWS.
+socials:
+  - linkedin: https://www.linkedin.com/in/donaldmouafo/
+  - github: https://github.com/DonaldMOUAFO/

@@ -1,6 +1,23 @@
 name: Donald MOUAFO
 title: PhD | Data scientist | Machine Learning Engineer | MLOps Engineer | Cloud Enthusiast | RD
 bio: Passionate about AI, MLOps, and building intelligent solutions on the cloud.
+Experience:
+  - title: Data science | Machine Learning Engineer | MLOps Engineer | Cloud Engineer | RD
+    company: Tech Innovations Inc.
+    duration: Jan 2022 - Present
+    desc: Developing scalable ML models and deploying them on AWS SageMaker.
+  - title: Machine Learning Engineer | Data Scientist
+    company: Yotta academy | Quantemetry 
+    duration: Jun 2019 - Dec 2021
+    desc: Created predictive models and automated data pipelines.
+Education:
+  - degree: PhD in computional physics
+    institution: University of Stasbourg
+    year: 2019
+  - degree: MSc in condensed matter physics
+    institution: University of Stasbourg
+    year: 2015
+
 skills:
   - Python
   - TensorFlow

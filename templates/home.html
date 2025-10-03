@@ -1,0 +1,37 @@
+
+<head>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style_home.css') }}">
+</head>
+<section class="personal-presentation">
+    <div class="container">
+        <div class="left">
+            <img src="{{ url_for('static', filename='Donald_MOUAFO-removebg.jpg') }}" alt="Example Image">
+            <h2>From Data 2 Possible ...</h2>
+            <p> "Whatever is well conceived is clearly said, And the words to say it flow with ease" Nicolas BOILEAU</p>
+            <p> As a Data Scientist & MLOps Engineer, This quotation is the appropriate guideline of any project.</p>
+            <p> Implementing a CI&CD pipeline fulfill the first half of the quatation, fully automatising the CI&CD pipeline fulfill the second healf.</div>
+            <p> Are-you convinced ...? No ...? Let show that together ...</div>
+        <div class="right">
+            <h1>{{ profile.name }}</h1>
+            <h3>{{ profile.title }}</h3>
+            <p>{{ profile.bio }}</p>
+            <h4>Skills</h4>
+            <div class="skills">
+                {% for skill in profile.skills %}
+                    <span>{{ skill }}</span>
+                {% endfor %}
+            </div>
+            <h4>Social media</h4>
+            <div class="socials">
+                {% for social in profile.socials %}
+                    {% for name, link in social.items() %}
+                        <a href="{{ link }}" target="_blank">{{ name }}</a>
+                    {% endfor %}
+                {% endfor %}
+            </div>
+            <h4>Contact</h4>
+            <p>Email: <a href="mailto:{{ profile.email }}">{{ profile.email }}</a></p>
+            <p><a href="{{ url_for('projects') }}">View Projects</a> | <a href="{{ url_for('contact') }}">Contact Me</a></p>
+        </div>
+    </div>
+</section>

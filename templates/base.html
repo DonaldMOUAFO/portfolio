@@ -1,6 +1,5 @@
 <!DOCTYPE html>
-<html lang="en"> 
-<html>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,16 +9,12 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 </head>
-<!-- <body> -->
-<!-- Navigation Bar -->
-<header role="banner">
-    <nav aria-label="Main navigation">
-
-        <ul class="nav-links">
-            
-            <div class="right-links">
-                <li><a href="{{ url_for('index') }}"aria-current="page">Home</a></li>
-
+<body>
+    <!-- Navigation Bar -->
+    <header role="banner">
+        <nav aria-label="Main navigation">
+            <ul class="nav-links">
+                <li><a href="{{ url_for('index') }}" aria-current="page">Home</a></li>
                 <li class="dropdown">
                     <a href="#">Domains ☰</a>
                     <ul class="dropdown-menu">
@@ -28,66 +23,30 @@
                         <li><a href="{{ url_for('aws') }}" role="menuitem">AWS</a></li>
                     </ul>
                 </li>
-            </div>
-            
-            <div class="nav-center"> 
-                <div class="center-links">
-                    <li>
-                        <form action="{{ url_for('search') }}" method="GET" class="search-form">
-                            <input type="text" name="q" placeholder="Search..." />
-                            <button type="submit" aria-label="Submit search">🔍</button>
-                        </form>
-                    </li>
-                </div>
-            </div>
+                <li>
+                    <form action="{{ url_for('search') }}" method="GET" class="search-form">
+                        <input type="text" name="q" placeholder="Search..." />
+                        <button type="submit" aria-label="Submit search">🔍</button>
+                    </form>
+                </li>
+                <li><a href="{{ url_for('projects') }}">Projects</a></li>
+                <li><a href="{{ url_for('contact') }}">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
 
-            <div class="nav-right">
-                <div class="right-links">
-                    <li><a href="{{ url_for('projects') }}">Projects</a></li>
-                    <li><a href="{{ url_for('contact') }}">Contact</a></li>
-                </div>
-            </div>
-        </ul>
-    </nav> 
-</header>
-<body>
     <!-- Main Profile Content -->
-    <div class="container">
-        
-        <div class="left">
-            <h2>Left Side</h2>
-            <p>This is the left div.</p>
-            <img src="{{ url_for('static', filename='Donald_MOUAFO.jpeg') }}" alt="Example Image">
-        </div>
+    {% include "home.html" %}
 
-        <div class="right">
-            <h1>{{ profile.name }}</h1>
-            <h3>{{ profile.title }}</h3>
-            <p>{{ profile.bio }}</p>
-            <h4>Skills</h4>
-            <div class="skills">
-                {% for skill in profile.skills %}
-                    <span>{{ skill }}</span>
-                {% endfor %}
-            </div>
-            <h4>Social media</h4>
-            <div class="socials">
-                {% for social in profile.socials %}
-                    {% for name, link in social.items() %}
-                        <a href="{{ link }}" target="_blank">{{ name }}</a>
-                    {% endfor %}
-                {% endfor %}
-            </div>
-            <h4>Contact</h4>
-            <p>Email: <a href="mailto:{{ profile.email }}">{{ profile.email }}</a></p>
-            <p><a href="{{ url_for('projects') }}">View Projects</a> | <a href="{{ url_for('contact') }}">Contact Me</a></p>
-        </div>
-    </div>
-    {% block content %}{% endblock %}
+    <!-- Contenu dynamique -->
+    {# {% block content %}{% endblock %} #}
 
+    <!-- Inclusion de news_feed.html -->
+    {% include 'news_feed.html' %}
+
+    <!-- Footer -->
     <footer role="contentinfo">
-        <p>&copy; {{ now.year }} {{ profile.name }}. All rights reserved.</p>
+        <p>&copy; 2024 {{ profile.name }}. All rights reserved.</p>
     </footer>
-
 </body>
 </html>

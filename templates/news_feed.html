@@ -1,0 +1,22 @@
+
+<section class="news-feed" aria-labelledby="news-heading"> 
+    <h2 id="news-heading" class="news-title">Dernières Actualités</h2>
+    <div class="news-container">
+        {% for item in news_items %}
+            <article class="news-card">
+                <div class="news-card-header">
+                    <h3 class="news-card-title">{{ item.title }}</h3>
+                    <span class="news-card-date">{{ item.date }}</span>
+                </div>
+                <div class="news-card-body">
+                    <p class="news-card-text">{{ item.content }}</p>
+                </div>
+                <div class="news-card-footer">
+                    <a href="{{ item.link }}" class="news-card-link">Lire la suite</a>
+                </div>
+            </article>
+        {% endfor %}
+    </div> 
+</section>
+
+

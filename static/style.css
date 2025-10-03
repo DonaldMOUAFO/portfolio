@@ -1,14 +1,348 @@
-body {
-    font-family: Arial, sans-serif;
-    margin: 40px;
-}
+/* Base styles (same as before) */
 nav {
-    margin-bottom: 20px;
+  
+  position: center;
+  display: flex;
+  background-color: hwb(222 44% 17%);
+  padding: 1%;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  align-items: center;
+  font-size: 1.1em;
+  width: 97%;
 }
+
+.navbar {
+  display: flex;
+  justify-content: center; /* center the whole navbar content */
+  align-items: center;
+  background-color: #222;
+  border-radius: 8px;
+  padding: 0.3em;
+}
+
 a {
-    color: #0077cc;
-    text-decoration: none;
+  color: #a1acb4;
+  text-decoration: none;  
+  font-weight: bold;
+
 }
-a:hover {
-    text-decoration: underline;
+/* a:hover {
+  text-decoration: underline; 
+} */
+
+.nav-left {
+  align-items: center;
+  padding: 1em; /* top right bottom left */
+  margin: 10px 2% 10px 0;
+
+}
+
+.nav-right {
+  align-items: center;
+  padding: 1em; /* top right bottom left */
+  margin: 10px 2% 10px 2%;
+}
+
+.nav-center {
+  text-align: center;
+  padding: 1em;
+  margin: 10px 2% 10px 2%;
+}
+
+.nav-links {
+  list-style: none;
+  display: inline-flex;
+  gap: 1%;  /* space between left and right groups */
+  justify-content: space-between; /* left group vs right group */
+  width: 100%;
+  margin: 10px 20% 10px 20%;
+  
+}
+
+.left-links{
+  align-items: center;
+  display: flex;
+  gap: 1em;
+}
+.right-links {
+  align-items: center;
+  display: flex;
+  gap: 1em;
+}
+
+.center-links {
+  align-items: center;
+  display: flex;
+  gap: 1em;
+}
+
+/* Search form inside navbar */
+/* ...existing code... */
+.search-form {
+  display: flex;
+  width: 100%;
+  max-width: 400px;   /* or 100% for full width */
+  margin: 0 1em;
+  flex: 1 1 300px;    /* allow to grow and shrink */
+}
+
+.search-form input[type="text"] {
+  flex: 1 1 auto;     /* input grows to fill space */
+  min-width: 0;
+  padding: 0.5em 1em;
+  border: 1px solid #632972;
+  border-radius: 20px 0 0 20px;
+  outline: none;
+  font-size: 1em;
+  background: #f2e4f1;
+  color: #7e2d8f;
+  transition: border 0.2s;
+}
+
+.search-form button {
+  flex: 0 0 auto;     /* button keeps its size */
+  padding: 0.5em 1em;
+  border: none;
+  border-radius: 0 20px 20px 0;
+  background: #713e92;
+  color: #fff;
+  font-size: 1em;
+  cursor: pointer;
+  transition: margin-right 2s, color 1s;
+}
+/* ...existing code... */
+
+.nav-links li a {
+  color: rgb(235, 225, 225);
+  text-decoration: none;
+  font-weight: bold;
+}
+.nav-links li a:hover {
+  color: #00bfff;
+}
+
+/* Dropdown container */
+.dropdown {
+  position: relative;
+  display: inline-block; /* Assure que le dropdown est en ligne */
+}
+
+/* Dropdown menu (hidden by default) */
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 60%; /* Place le menu juste en dessous du lien parent */
+  left: 0; /* Aligne à gauche du parent */
+  background: #a35f5f;
+  padding: 8px 0;
+  list-style: none;
+  border-radius: 6px;
+  min-width: 180px;
+  z-index: 1000; /* Place le menu AU-DESSUS des autres éléments */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Ombre pour le relief */
+}
+
+.dropdown-menu li {
+  margin: 0;
+  padding: 0;
+}
+
+.dropdown-menu li a {
+  display: block;
+  padding: 10px 15px;
+  color: white;
+  text-decoration: none;
+  transition: background 0.3s ease;
+}
+
+.dropdown-menu li a:hover {
+  background: #3b2222;
+  color: #00bfff;
+}
+
+/* Show dropdown on hover */
+.dropdown:hover .dropdown-menu {
+  display: block;
+}
+
+/* Mobile styles */
+@media (max-width: 684px) {
+
+  .navbar {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .nav-left, .nav-right, .nav-center {
+    flex-direction: column;
+    justify-content: center;
+    margin: 0.5em 0;
+  }
+  .nav-left ul, .nav-right ul {
+    flex-direction: column;
+    align-items: center;
+  }
+  .search-form {
+    width: 100%;
+  }
+  .search-form input {
+    flex: 1;
+  }
+  .search-form button {
+    margin-left: 0.5em;
+  }
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    right: 20px;
+    background: #333;
+    padding: 10px;
+    border-radius: 8px;
+  }
+  .menu-toggle:checked ~ .nav-links {
+    display: flex;
+  }
+  .dropdown-menu {
+    position: static;   /* stacks with mobile */
+    min-width: unset;
+  }
+}
+
+/* Additional styles for navbar with search form */
+body { 
+  font-family: Arial, sans-serif; 
+  margin: 2em; 
+  background: #f9f9f9; 
+  margin: 0px;
+
+}
+
+h1 { 
+  margin-top: 0; 
+  color: #333;
+}
+
+ul { list-style: none; padding: 0; }
+li { margin-bottom: 0.5em; }
+.skills span { background: #e0e0e0; 
+  padding: 0.3em 0.8em; 
+  border-radius: 4px; 
+  margin-right: 0.5em; 
+}
+
+.socials a { 
+  margin-right: 1em; 
+  text-decoration: none; 
+  color: #0077cc;
+ }
+/* General styles */
+
+h2 {
+  color: #555;
+}
+
+footer {
+  text-align: center;
+  /* padding: 1em 0 1em 0; */
+  background: #383636;
+  color: #fff;
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+}
+
+/* File d'actualités */
+.news-feed {
+  max-width: 100%;
+  background-color: #a3b7ee; /* Couleur unie (gris très clair) */
+  margin: auto auto auto auto; /* top right bottom left */
+  padding: 1em 2em 3%;
+}
+
+.news-title {
+  text-align: center;
+  margin-bottom: 2rem;
+  color: var(--secondary-color);
+  font-size: 1.8rem;
+}
+
+.news-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  justify-content: center;
+  min-height: 100%;
+  margin: 1%;
+}
+
+.news-card {
+  flex: 1 1 300px; /* Base de 300px, flexible */
+  max-width: 550px;
+  background: var(--text-light);
+  background-color: #ffffff; /* Couleur unie (gris très clair) */
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow);
+  overflow: hidden;
+  transition: var(--transition);
+  border-radius: 4px;
+}
+
+.news-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(134, 94, 94, 0.425);
+}
+
+.news-card-header {
+  padding: 1rem;
+  border-bottom: 1px solid #eee;
+}
+
+.news-card-title {
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+  color: var(--primary-color);
+}
+
+.news-card-date {
+  display: block;
+  font-size: 0.8rem;
+  color: var(--text-color);
+  opacity: 0.7;
+}
+
+.news-card-body {
+  padding: 1rem;
+}
+
+.news-card-text {
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: var(--text-color);
+}
+
+.news-card-footer {
+  padding: 1rem;
+  border-top: 1px solid #eee;
+  text-align: right;
+}
+
+.news-card-link {
+  color: var(--accent-color);
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.news-card-link:hover {
+  text-decoration: underline;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .news-container {
+    flex-direction: column;
+    align-items: center;
+  }
 }

@@ -1,0 +1,365 @@
+/*
+
+.personal-presentation {
+    background: linear-gradient(135deg, #f5f7fa 0%, #e4e8f0 100%);
+    padding: 4rem 0;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    
+}
+
+.container {
+    display: flex;
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 0 2rem;
+    gap: 0.5rem;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+ ===== Astuce pour forcer la même hauteur ===== 
+.container::after {
+    display: block;
+    clear: both;
+}
+
+.left, .right {
+    flex: 1;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 12px;
+    padding: 2rem;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    backdrop-filter: blur(5px);
+    transition: all 0.4s ease;
+    display: flex;  Ajout pour gérer la hauteur 
+    flex-direction: column;  Contenu en colonne 
+    min-height: 500px; /* Hauteur minimale fixe 
+    width: 50%;
+    height: 100%;
+}
+
+ ===== Contenu des colonnes ===== 
+.left-content, .right-content {
+    flex: 1;  Permet au contenu de s'étirer 
+}
+
+.left:hover, .right:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
+}
+
+.left img {
+    max-width: 300px;
+    border-radius: 12px;
+    border: 5px solid #fff;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.4s ease;
+    margin-top: auto;  Pour centrer verticalement 
+    margin-bottom: auto;
+}
+
+.left img:hover {
+    transform: scale(1.03);
+}
+
+ ===== Right Side Styling ===== 
+.right h1 {
+    font-size: 2.5rem;
+    color: #2c3e50;
+    margin-bottom: 0.5rem;
+    position: relative;
+    display: inline-block;
+}
+
+.right h1::after {
+    content: "";
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 100px;
+    height: 1px;
+    background: linear-gradient(90deg, #db4734, #a73019);
+}
+
+.right h3 {
+    color: #7f8c8d;
+    font-size: 1.2rem;
+    margin-bottom: 1.1rem;
+    font-weight: 300;
+}
+
+.right p {
+    color: #34495e;
+    line-height: 1.7;
+    margin-bottom: 1.5rem;
+}
+
+ ===== Skills Section ===== 
+.skills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.8rem;
+    margin-bottom: 2rem;
+}
+
+.skills span {
+    background: linear-gradient(135deg, #3498db, #2980b9);
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.skills span:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+ ===== Social Media Links ===== 
+.socials {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.socials a {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    background: rgba(255, 255, 255, 0.8);
+    color: #2c3e50;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.socials a:hover {
+    background: #3498db;
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+ ===== Contact Links ===== 
+.right a {
+    color: #3498db;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.right a:hover {
+    color: #e74c3c;
+    text-decoration: underline;
+}
+
+ ===== Responsive Design ===== 
+@media (max-width: 992px) {
+    .container {
+        flex-direction: column;
+    }
+
+    .left, .right {
+        width: 100%;
+        min-height: auto;  Hauteur automatique en mobile 
+        margin-bottom: 2rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .right h1 {
+        font-size: 2rem;
+    }
+
+    .right h3 {
+        font-size: 1.1rem;
+    }
+
+    .skills {
+        justify-content: center;
+    }
+}
+
+===== Animations ===== 
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.left, .right {
+    animation: fadeInUp 0.6s ease forwards;
+}
+
+.left {
+    animation-delay: 0.2s;
+}
+
+.right {
+    animation-delay: 0.4s;
+}
+*/
+
+/* General Section Styling */
+.personal-presentation {
+  padding: 3em 2em;
+  background: linear-gradient(135deg, #f9f9f9, #eaeaea);
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  color: #333;
+  width: 100%;
+}
+
+/* Flex container */
+.personal-presentation .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch; /* makes left & right equal height */
+  gap: 2em;
+  max-width: 100%;
+  margin: 0 auto;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+  padding: 2em;
+
+  /* Animation */
+  opacity: 0;
+  animation: fadeSlideUp 1s ease-out forwards;
+  animation-delay: 0.3s; /* delay for smooth effect */
+}
+
+/* Left side */
+.personal-presentation .left {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  border-right: 2px solid #f0f0f0;
+  padding-right: 1.5em;
+}
+
+.personal-presentation .left img {
+  max-width: 200px;
+  height: auto;
+  border-radius: 50%; /* round profile image */
+  margin-top: 1em;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  transition: transform 0.3s ease;
+}
+
+.personal-presentation .left img:hover {
+  transform: scale(1.05);
+}
+
+/* Right side */
+.personal-presentation .right {
+  flex: 2;
+  padding-left: 1.5em;
+}
+
+.personal-presentation .right h1 {
+  font-size: 2em;
+  margin-bottom: 0.2em;
+  color: #222;
+}
+
+.personal-presentation .right h3 {
+  font-weight: normal;
+  margin-bottom: 1em;
+  color: #555;
+}
+
+.personal-presentation .right p {
+  line-height: 1.6;
+  margin-bottom: 1em;
+}
+
+/* Skills */
+.skills span {
+  display: inline-block;
+  background: #0077cc;
+  color: #fff;
+  padding: 0.4em 0.8em;
+  margin: 0.2em;
+  border-radius: 20px;
+  font-size: 0.9em;
+  transition: background 0.3s;
+}
+
+.skills span:hover {
+  background: #005fa3;
+}
+
+/* Social Media Links */
+.socials a {
+  margin-right: 1em;
+  text-decoration: none;
+  color: #0077cc;
+  font-weight: 500;
+}
+
+.socials a:hover {
+  text-decoration: underline;
+  color: #005fa3;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .personal-presentation .container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .personal-presentation .left {
+    border-right: none;
+    border-bottom: 2px solid #f0f0f0;
+    padding-bottom: 1.5em;
+  }
+
+  .personal-presentation .right {
+    padding-left: 0;
+    padding-top: 1.5em;
+  }
+}
+
+@keyframes fadeSlideUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.personal-presentation .left,
+.personal-presentation .right {
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeSlideUp 0.8s ease-out forwards;
+}
+
+.personal-presentation .left {
+  animation-delay: 0.2s;
+}
+
+.personal-presentation .right {
+  animation-delay: 0.6s;
+}

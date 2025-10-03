@@ -2,15 +2,33 @@
 <head>
     <link rel="stylesheet" href="{{ url_for('static', filename='style_home.css') }}">
 </head>
+
 <section class="personal-presentation">
     <div class="container">
         <div class="left">
-            <img src="{{ url_for('static', filename='Donald_MOUAFO-removebg.jpg') }}" alt="Example Image">
-            <h2>From Data 2 Possible ...</h2>
-            <p> "Whatever is well conceived is clearly said, And the words to say it flow with ease" Nicolas BOILEAU</p>
-            <p> As a Data Scientist & MLOps Engineer, This quotation is the appropriate guideline of any project.</p>
-            <p> Implementing a CI&CD pipeline fulfill the first half of the quatation, fully automatising the CI&CD pipeline fulfill the second healf.</div>
-            <p> Are-you convinced ...? No ...? Let show that together ...</div>
+            <div class="top-left">
+                <div class="top-left-left-picture">
+                    <img src="{{ url_for('static', filename='Donald_MOUAFO-removebg.jpg') }}" alt="Profile Picture">
+                </div>
+                <div class="top-left-right-quote" aria-label="Nicolas Boileau">
+                    <p class="quote">
+                        Whatever is well conceived is clearly said,
+                        and the words to say it flow with ease...
+                    </p>
+                    <p class="author">
+                        — Nicolas Boileau
+                    </p>
+                </div>
+            </div>
+            <div class="bottom-left">
+                <h2>From Data 2 Possible ...</h2>
+                <p>"Whatever is well conceived is clearly said, And the words to say it flow with ease" Nicolas BOILEAU</p>
+                <p>In MLOps Engineering, this quotation is a proper guideline for any project.
+                    CI&CD pipeline implementation fulfills the first half of the quotation, fully automating CI&CD pipeline fulfills the second half.
+                </p>
+                <p>Convinced ...? No ...? Let's show that together ...</p>
+            </div>
+        </div>
         <div class="right">
             <h1>{{ profile.name }}</h1>
             <h3>{{ profile.title }}</h3>
@@ -35,3 +53,4 @@
         </div>
     </div>
 </section>
+

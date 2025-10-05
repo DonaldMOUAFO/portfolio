@@ -24,7 +24,7 @@
     flex-direction: column;
     background: rgba(255, 255, 255, 0.9);
     border-radius: 12px;
-    padding: 2rem;
+    padding: 0.1srem;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
     backdrop-filter: blur(5px);
     transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
@@ -45,8 +45,9 @@
 /* Top-left : image et citation côte à côte */
 .top-left {
     display: flex;
-    gap: 1rem;
-    margin-bottom: 1rem;
+    gap: 0;
+    margin: 0 0.5rem;
+    border-bottom: 1px solid #0777f7;
 }
 
 .top-left-left-picture {
@@ -63,7 +64,8 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding: 1rem;
+    margin: 0 1.5em auto auto;
+    padding: 0 1rem;
     background-color: #f9f9f9;
     border-radius: 8px;
 }
@@ -79,9 +81,8 @@
     font-weight: normal; /* Retiré le bold pour le texte principal */
     text-align: center; /* Centré pour un rendu élégant */
     padding: 1.5rem 2rem; /* Espacement interne */
-    margin: 1rem auto;
+    margin: 0 1rem 1rem;
     max-width: 100%;
-    /*background: linear-gradient(135deg, #aaaaaa,#ffffff 15%,#999999 10%,#f7f6f8 10%);*/
     background: linear-gradient(135deg, #d4ccee,#eee7f5 10%,#d4cdeb 15%,#e8e3f3 15%);
     border-radius: 8px;
     box-shadow: 0 200px 800px rgba(237, 229, 241, 0.842); /* Ombre plus neutre */
@@ -118,25 +119,57 @@
     font-weight: bold;
     font-weight: 500;
     text-align: right;
-    padding-right: 1rem;
+    padding-right: 1.5rem;
     font-style: italic;
     color: #2c3e50;
-    font-family: Georgia, serif;
+    font-family: sans-serif;
+}
+
+/* Bottom-left : conteneur */
+.bottom-left {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    padding: 0 0;
+    margin: 0 0.5rem 0 0;
+    max-width: 100%;
+    background-color: #f1eef7;
 }
 
 /* Bottom-left : texte */
-.bottom-left {
+.motivation {
+    margin: 0 0 0.1rem 0.3rem;
     text-align: left;
+    font-style: italic;
+    font-size: 1rem;
+    color: #304357;
+    font-family: Georgia, serif;
+    padding: 0 0; /* Espacement interne */
 }
 
-.bottom-left h2 {
-    color: #333;
-    margin-bottom: 1rem;
+.process {
+    margin: 0 0 0.1rem 0.3rem;
+    text-align: left;
+    font-style: italic;
+    font-size: 1rem;
+    color: #304357;
+    font-family: Georgia, serif;
+    padding: 0 0; /* Espacement interne */
 }
 
-.bottom-left p {
-    margin-bottom: 0.8rem;
-    line-height: 1.6;
+.motivation::before {
+    content: "\2666"; 
+    margin: 0 0;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #6e8cee;
+} 
+
+.process::before {
+    content: "\2666";
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #6e8cee;
 }
 
 /* Right : contenu de droite */
@@ -183,5 +216,14 @@
 
     .top-left-left-picture, .top-left-right-quote {
         width: 100%;
+    }
+    .top-left-right-quote {
+        margin: 1rem 1rem 0 0;
+        padding: 0.5rem 0%;
+        display: flex;
+        justify-content: center;
+    }
+    .author {
+        padding-right: 1.5rem;
     }
 }
